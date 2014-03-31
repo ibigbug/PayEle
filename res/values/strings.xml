@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Global START -->
+    <string name="app_name">电网掌上营业厅</string>
+    <string name="app_version">v0.0.1</string>
+    <string name="welcome_message">欢迎使用电网掌上营业厅</string>
+    <!-- Global END -->
+    
+    <!-- Main activity START-->
+    <string name="field_username">尊敬的用户：</string>
+    <string name="field_usage">当月用电量：</string>
+    <string name="field_remain">当前电费余额：</string>
+    
+    <string name="field_username_value">您尚未登录</string>
+    <string name="field_usage_value">0.0</string>
+    <string name="field_remain_value">0.0</string>
+    <!-- Main activity END -->
+    
+    <!-- Login activity START -->
+    <string name="login_title">请您登录</string>
+    <string name="hint_username">请输入用户名</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="login_text">登录</string>
+    <string name="register_text">新用户注册</string>
+    <!-- Login activity END -->
+    
+    <!-- Register activity START -->
+    <string name="register_title">欢迎注册</string>
+    <string name="hint_username_register">请输入用户名（数字字母或下划线）</string>
+    <string name="register_comfirm">注册</string>
+    <string name="hint_password_again">确认密码</string>
+    <!-- Register activity END -->
+    
+    <!-- Feed activity START -->
+    <string name="feed_activity_title">业界动态</string>
+    <!-- Feed activity END -->
+    
+    <!-- Post activity START -->
+    <!-- Post activity END -->
+    
+    <!-- Profile activity START -->
+    <string name="profile_title">个人信息</string>
+    <string name="hint_screen_name">昵称</string>
+    <string name="hint_location">所在城市</string>
+    <string name="hint_email">电子邮箱</string>
+    <string name="btn_update_profile">更新个人信息</string>
+    <!-- Profile activity END -->
+    
+    <!-- Query activity START -->
+    <string name="query_activity_title">用电记录查询</string>
+    <string name="query_sub_title">请选择要查询的时间段</string>
+    <string name="query_date_from">选择开始日期</string>
+    <string name="query_date_to">选择结束日期</string>
+    <string name="query_result_title">查询结果</string>
+    <string name="query_do">查询</string>
+    <!-- Query activity END -->
+    
+</resources>

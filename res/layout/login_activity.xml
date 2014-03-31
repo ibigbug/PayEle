@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/header_bg" >
+    	
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:text="@string/login_title"/>
+    </RelativeLayout>
+    
+   <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#cccccc"
+		android:orientation="vertical"
+		android:padding="10dp" >
+    
+    	<EditText
+    	    android:id="@+id/login_form_username"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:background="#fff"
+    	    android:hint="@string/hint_username"
+    	    android:textCursorDrawable="@null"
+    	    android:inputType="textNoSuggestions|textVisiblePassword"
+    	    android:padding="10dp"
+    	    android:textColor="#000" />
+        
+        <EditText
+            android:id="@+id/login_form_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:hint="@string/hint_password"
+            android:textCursorDrawable="@null"
+            android:inputType="textNoSuggestions|textPassword"
+            android:padding="10dp"
+            android:textColor="#000" />
+        
+        <Button
+            android:id="@+id/login_form_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            android:layout_marginTop="10dp"
+            android:text="@string/login_text"
+            android:onClick="doLogin" />
+        
+        <TextView
+            android:id="@+id/login_form_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_text"
+            android:layout_marginTop="15dp"
+            android:textColor="#235149"
+            android:clickable="true"
+            android:onClick="toRegisterView"/>
+        
+    </LinearLayout>
+</LinearLayout>

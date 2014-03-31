@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/header_bg" >
+    	
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:text="@string/profile_title"/>
+    </RelativeLayout>
+    
+   <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#cccccc"
+		android:orientation="vertical"
+		android:padding="10dp" >
+    
+    	<EditText
+    	    android:id="@+id/profile_screen_name"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:background="#fff"
+    	    android:hint="@string/hint_screen_name"
+    	    android:textCursorDrawable="@null"
+    	    android:inputType="textNoSuggestions|textVisiblePassword"
+    	    android:padding="10dp"
+    	    android:textColor="#000" />
+        
+        <EditText
+            android:id="@+id/profile_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:hint="@string/hint_location"
+            android:textCursorDrawable="@null"
+            android:inputType="textNoSuggestions|textVisiblePassword"
+            android:padding="10dp"
+            android:textColor="#000" />
+        
+        <EditText
+            android:id="@+id/profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:hint="@string/hint_email"
+            android:textCursorDrawable="@null"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textColor="#000" />
+        
+        <Button
+            android:id="@+id/profile_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            android:layout_marginTop="10dp"
+            android:text="@string/btn_update_profile"
+            android:onClick="doUpdateProfile" />
+
+    </LinearLayout>
+</LinearLayout>

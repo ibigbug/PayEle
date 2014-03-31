@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/header_bg" >
+    	
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:text="@string/feed_activity_title" />
+    </RelativeLayout>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ccc"
+        android:padding="10dp">
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="10dp"
+	        android:background="#fff">
+	        
+	        <TextView
+	           	android:id="@+id/post_title"
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:layout_marginBottom="10dp"
+	           	android:textColor="#000"
+	           	android:textSize="24sp"
+	           	android:layout_centerHorizontal="true" />
+	        
+	        <TextView
+	            android:id="@+id/post_author"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/post_title"
+	            android:textColor="#333" />
+
+	        <TextView
+	            android:id="@+id/post_date"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_alignBaseline="@id/post_author" />
+
+	        <TextView
+	            android:id="@+id/post_content"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_below="@id/post_author"
+	            android:layout_marginTop="20dp"
+	            android:textColor="#000"
+	            android:textSize="18sp" />
+
+	    </RelativeLayout>
+    </ScrollView>
+    
+ </LinearLayout>
