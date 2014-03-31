@@ -52,6 +52,8 @@
     <string name="query_date_from">选择开始日期</string>
     <string name="query_date_to">选择结束日期</string>
     <string name="query_result_title">查询结果</string>
+    <string name="table_filed_date">日期</string>
+    <string name="table_filed_usage">用量（度）</string>
     <string name="query_do">查询</string>
     <!-- Query activity END -->
     

@@ -21,7 +21,12 @@ public class ModelUsage {
 	}
 
 	
-    /**
+    public ModelUsage() {
+	    // TODO Auto-generated constructor stub
+    }
+
+
+	/**
      * @return the id
      */
     public int getId() {

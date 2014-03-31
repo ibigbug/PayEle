@@ -54,7 +54,7 @@
                 android:layout_marginLeft="10dp"
                 android:clickable="true"
                 android:hint="@string/query_date_from"
-                android:onClick="showDatePicker" />
+                android:cursorVisible="false" />
             
             <EditText
                 android:id="@+id/query_date_to"
@@ -67,7 +67,7 @@
                 android:layout_marginRight="10dp"
                 android:clickable="true"
                 android:hint="@string/query_date_to"
-                android:onClick="showDatePicker" />
+                android:cursorVisible="false" />
             
             <Button
                 android:id="@+id/query_button"
@@ -101,6 +101,8 @@
            	android:stretchColumns="*"
            	android:orientation="vertical"
            	android:padding="10dp"
+           	android:divider="?android:attr/dividerHorizontal"
+			android:showDividers="middle"
            	android:background="#fff" >
             
        	    
@@ -110,7 +112,34 @@
   	            android:gravity="center"
   	            android:text="@string/query_result_title"
   	            android:textColor="#000"
+  	            android:layout_marginBottom="10dp"
   	            android:textSize="20sp"/>
+  	        
+  	        <TableRow>
+  	            
+				<TextView
+				    android:id="@+id/result_item_date"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:padding="10dp"
+				    android:textColor="#000"
+				    android:background="#eee"
+				    android:gravity="center"
+				    android:textSize="18sp"
+				    android:text="@string/table_filed_date" />
+			             
+			   <TextView
+			       android:id="@+id/result_item_usage"
+				   android:layout_width="wrap_content"
+				   android:layout_height="wrap_content"
+				   android:textColor="#000"
+				   android:padding="10dp"
+				   android:background="#eee"
+				   android:gravity="center"
+				   android:textSize="18sp"
+				   android:text="@string/table_filed_usage" />
+  	        </TableRow>
+  	        
 
 		</TableLayout>
 		

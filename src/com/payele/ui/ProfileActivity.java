@@ -43,6 +43,7 @@ public class ProfileActivity extends Activity{
 		
 		initDB();
 		initView();
+		
 		Application_.getInstatnce().addActivity(this);
 	}
 	

@@ -1,11 +1,11 @@
 package com.payele.ui;
 
-import com.payele.utils.Application_;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.payele.utils.Application_;
 
 /** 
  * @ClassName: OnLoading 

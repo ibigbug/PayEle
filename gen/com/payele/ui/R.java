@@ -62,10 +62,12 @@ public final class R {
         public static final int query_date_to=0x7f080019;
         public static final int query_result_table=0x7f08001b;
         public static final int query_sub_title=0x7f080017;
-        public static final int reg_form_confirm=0x7f08001f;
-        public static final int reg_form_password=0x7f08001d;
-        public static final int reg_form_password2=0x7f08001e;
-        public static final int reg_form_username=0x7f08001c;
+        public static final int reg_form_confirm=0x7f080021;
+        public static final int reg_form_password=0x7f08001f;
+        public static final int reg_form_password2=0x7f080020;
+        public static final int reg_form_username=0x7f08001e;
+        public static final int result_item_date=0x7f08001c;
+        public static final int result_item_usage=0x7f08001d;
     }
     public static final class layout {
         public static final int feed_activity=0x7f030000;
@@ -99,7 +101,7 @@ public final class R {
          */
         public static final int field_username=0x7f060003;
         public static final int field_username_value=0x7f060006;
-        public static final int grid_icon=0x7f06001e;
+        public static final int grid_icon=0x7f060020;
         public static final int hint_email=0x7f060016;
         public static final int hint_location=0x7f060015;
         public static final int hint_password=0x7f06000b;
@@ -124,7 +126,7 @@ public final class R {
         public static final int query_activity_title=0x7f060018;
         public static final int query_date_from=0x7f06001a;
         public static final int query_date_to=0x7f06001b;
-        public static final int query_do=0x7f06001d;
+        public static final int query_do=0x7f06001f;
         public static final int query_result_title=0x7f06001c;
         public static final int query_sub_title=0x7f060019;
         public static final int register_comfirm=0x7f060010;
@@ -133,7 +135,9 @@ public final class R {
  Register activity START 
          */
         public static final int register_title=0x7f06000e;
-        public static final int welcome_logo=0x7f06001f;
+        public static final int table_filed_date=0x7f06001d;
+        public static final int table_filed_usage=0x7f06001e;
+        public static final int welcome_logo=0x7f060021;
         public static final int welcome_message=0x7f060002;
     }
     public static final class style {
