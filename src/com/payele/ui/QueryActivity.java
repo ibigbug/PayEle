@@ -3,6 +3,14 @@ package com.payele.ui;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import org.achartengine.ChartFactory;
+import org.achartengine.GraphicalView;
+import org.achartengine.chart.BarChart.Type;
+import org.achartengine.model.CategorySeries;
+import org.achartengine.model.XYMultipleSeriesDataset;
+import org.achartengine.model.XYSeries;
+import org.achartengine.renderer.XYMultipleSeriesRenderer;
+import org.achartengine.renderer.XYSeriesRenderer;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,6 +22,7 @@ import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.InputType;
@@ -28,6 +37,7 @@ import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +59,10 @@ public class QueryActivity extends Activity{
 	
 	private static TableAdapter adapter;
 	private static TableLayout resultTable;
+	
+	private GraphicalView graphicalView;
+	private XYMultipleSeriesRenderer renderer;
+	
 	private static EditText dateFromText;
 	private static EditText dateToText;
 	private static EditText currentDateEdit;
@@ -94,6 +108,7 @@ public class QueryActivity extends Activity{
 	}
 	
 	private void initView() {
+		
 		resultTable = (TableLayout) findViewById(R.id.query_result_table);
 		dateFromText = (EditText) findViewById(R.id.query_date_from);
 		dateToText = (EditText) findViewById(R.id.query_date_to);
@@ -138,7 +153,10 @@ public class QueryActivity extends Activity{
 			String queryUrl = "/usage/query/" + String.valueOf(currentUid) +
 					"/" + dateFromText.getText().toString() +
 					"/" + dateToText.getText().toString();
-			new QueryTask().execute(queryUrl);
+			if (usageList.isEmpty())
+				new QueryTask().execute(queryUrl);
+			else
+				showPieResult();
 		}
 	}
 	
@@ -148,13 +166,68 @@ public class QueryActivity extends Activity{
 	    return fromDateString.compareTo(toDateString) < 0;
     }
 	
-	private void showResult() {
+	private void showTableResult() {
 		resultTable.setVisibility(View.VISIBLE);
 		adapter = new TableAdapter();
 		for (int i = 0; i < adapter.getCount(); i++) {
 	        resultTable.addView(adapter.getView(i, null, resultTable));
         }
 	}
+	
+	@SuppressWarnings("deprecation")
+    private void showPieResult() {
+		renderer = getBarDemoRenderer();
+		setChartSettings(renderer);
+		graphicalView = ChartFactory.getBarChartView(this, getDataset(), renderer, Type.DEFAULT);
+		
+		for (int i = 0; i < usageList.size(); i ++)
+			renderer.addTextLabel(i+1, usageList.get(i).getDate());
+		LinearLayout layout = (LinearLayout) findViewById(R.id.query_result_pie);
+		layout.setBackgroundColor(Color.GRAY);
+		layout.addView(graphicalView);
+	}
+	
+	private static XYMultipleSeriesDataset getDataset () {
+		XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
+		CategorySeries series = new CategorySeries("查询结果");
+		for (int i = 0; i < usageList.size(); i++) {
+			series.add(usageList.get(i).getUsage());
+		}
+		dataset.addSeries(series.toXYSeries());
+		return dataset;
+	}
+	
+	private static XYMultipleSeriesRenderer getBarDemoRenderer() {  
+        XYMultipleSeriesRenderer renderer = new XYMultipleSeriesRenderer();  
+        renderer.setAxisTitleTextSize(12);  
+        renderer.setChartTitleTextSize(12);  
+        renderer.setLabelsTextSize(12);  
+        renderer.setLegendTextSize(12);  
+        renderer.setMargins(new int[] { 20, 30, 15, 0 });  
+        XYSeriesRenderer r = new XYSeriesRenderer();  
+        r.setColor(Color.GREEN);  
+        renderer.addSeriesRenderer(r);  
+        return renderer;
+	}
+	
+	@SuppressWarnings("deprecation")
+    private static void setChartSettings(XYMultipleSeriesRenderer renderer) {  
+        renderer.setChartTitle("查询结果");  
+        renderer.setXTitle("时间-天");  
+        renderer.setYTitle("用电量(度)");  
+        renderer.setDisplayChartValues(true);
+        renderer.setYAxisMin(0);  
+        renderer.setXAxisMin(0.5);  
+        renderer.setXAxisMax(12.5);  
+        renderer.setShowLegend(false);  
+        renderer.setShowLabels(true);  
+        renderer.setShowGrid(true);  
+        renderer.setXLabels(1);
+        renderer.setBarSpacing(1.5f);
+        renderer.setPanEnabled(true, false);//允许左右拖动,但不允许上下拖动. 
+        renderer.setBarSpacing(0.5);  
+        renderer.setBackgroundColor(Color.WHITE);  
+    }
 	
 	
 	public static class DatePickerFragment extends DialogFragment
@@ -187,6 +260,7 @@ public class QueryActivity extends Activity{
 	public class TableAdapter extends BaseAdapter {
 		private TextView dateView;
 		private TextView usageView;
+		private TextView typeView;
 		
 		@Override
         public int getCount() {
@@ -210,16 +284,21 @@ public class QueryActivity extends Activity{
         public View getView(int position, View convertView, ViewGroup parent) {
 			String date;
 			int usage;
+			String type;
+			
 	        convertView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.result_item, null);
 	        
 	        date = usageList.get(position).getDate();
 	        usage = usageList.get(position).getUsage();
+	        type = usageList.get(position).getType();
 	        
 	        dateView = (TextView) convertView.findViewById(R.id.result_item_date);
 	        usageView = (TextView) convertView.findViewById(R.id.result_item_usage);
+	        typeView = (TextView) convertView.findViewById(R.id.result_item_type);
 	        
 	        dateView.setText(date);
 	        usageView.setText(String.valueOf(usage));
+	        typeView.setText(type);
 	        
 	        return convertView;
         }
@@ -270,11 +349,12 @@ public class QueryActivity extends Activity{
 	            		ContentValues cv = new ContentValues();
 	            		cv.put("date", usageObj.getString("when"));
 	            		cv.put("usage", usageObj.getInt("total"));
+	            		cv.put("type", usageObj.getString("type"));
 	            		usageModel = new ModelUsage(cv);
 	            		
 	            		usageList.add(usageModel);
 	            	}
-	            	showResult();
+	            	showPieResult();
 	            } else {
 	            	Toast.makeText(QueryActivity.this, "服务器异常", Toast.LENGTH_SHORT).show();
 	            }

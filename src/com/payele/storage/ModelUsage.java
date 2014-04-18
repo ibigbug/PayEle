@@ -14,10 +14,12 @@ public class ModelUsage {
 	public int id;
 	public String date;
 	public int usage;
+	public String type;
 	
 	public ModelUsage(ContentValues cv) {
 		this.date = cv.getAsString("date");
 		this.usage = cv.getAsInteger("usage");
+		this.type = cv.getAsString("type");
 	}
 
 	
@@ -71,6 +73,24 @@ public class ModelUsage {
      */
     public void setUsage(int usage) {
     	this.usage = usage;
+    }
+
+
+	
+    /**
+     * @return the type
+     */
+    public String getType() {
+    	return type;
+    }
+
+
+	
+    /**
+     * @param type the type to set
+     */
+    public void setType(String type) {
+    	this.type = type;
     }
 
 

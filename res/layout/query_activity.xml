@@ -91,9 +91,20 @@
     	android:layout_width="match_parent"
        	android:layout_height="match_parent"
        	android:background="#ccc"
+       	android:orientation="vertical"
        	android:padding="10dp" >
+        
+   	    <LinearLayout
+   	        android:id="@+id/query_result_pie"
+   	        android:layout_width="match_parent"
+   	        android:layout_height="wrap_content"
+   	        android:orientation="vertical"
+   	        android:background="#fff"
+   	        android:padding="10dp"/>
+   	    
        
        	<TableLayout
+       	    android:visibility="gone"
        	    android:id="@+id/query_result_table"
         	android:layout_width="match_parent"
            	android:layout_height="match_parent"
@@ -118,7 +129,6 @@
   	        <TableRow>
   	            
 				<TextView
-				    android:id="@+id/result_item_date"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
 				    android:padding="10dp"
@@ -126,10 +136,9 @@
 				    android:background="#eee"
 				    android:gravity="center"
 				    android:textSize="18sp"
-				    android:text="@string/table_filed_date" />
+				    android:text="@string/table_field_date" />
 			             
 			   <TextView
-			       android:id="@+id/result_item_usage"
 				   android:layout_width="wrap_content"
 				   android:layout_height="wrap_content"
 				   android:textColor="#000"
@@ -137,7 +146,18 @@
 				   android:background="#eee"
 				   android:gravity="center"
 				   android:textSize="18sp"
-				   android:text="@string/table_filed_usage" />
+				   android:text="@string/table_field_usage" />
+			   
+			   <TextView
+			       android:layout_width="wrap_content"
+				   android:layout_height="wrap_content"
+				   android:textColor="#000"
+				   android:padding="10dp"
+				   android:background="#eee"
+				   android:gravity="center"
+				   android:textSize="18sp"
+				   android:text="@string/table_field_type" />
+			       
   	        </TableRow>
   	        
 
