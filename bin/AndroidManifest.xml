@@ -31,6 +31,7 @@
         <activity android:name=".PostActivity"></activity>
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".QueryActivity"></activity>
+        <activity android:name=".ChargeActivity"></activity>
     </application>
     
     

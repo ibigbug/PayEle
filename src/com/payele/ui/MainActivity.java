@@ -122,14 +122,24 @@ public class MainActivity extends Activity {
 						MainActivity.this.finish();
 					}
 				} else if (position == 1) { // 用电查询
-					if (app.isLogined ==0)
+					if (app.isLogined == 0)
 						Toast.makeText(MainActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
 					else {
 						Intent intent = new Intent(MainActivity.this, QueryActivity.class);
 						startActivity(intent);
 						MainActivity.this.finish();
 					}
-				} else {
+				} else  if (position == 2){  // 在线缴费
+					if (app.isLogined == 0)
+						Toast.makeText(MainActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
+					else {
+						Intent intent = new Intent(MainActivity.this, ChargeActivity.class);
+						startActivity(intent);
+						MainActivity.this.finish();
+					}
+				}
+				else {
+					
 					Toast.makeText(MainActivity.this, "别点我", Toast.LENGTH_SHORT).show();
 				}					
 			}

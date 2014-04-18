@@ -8,6 +8,10 @@ import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 public class HttpRequest {
     /**
      * 向指定URL发送GET方法的请求
@@ -122,5 +126,16 @@ public class HttpRequest {
             }
         }
         return result;
-    }    
+    }
+    
+    public static boolean isNetworkCOnnected(Context context) {
+    	if (context != null) {
+    		ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    		NetworkInfo info = manager.getActiveNetworkInfo();
+    		if (info != null)
+    			return info.isAvailable();
+    	}
+    	return false;
+    }
+    
 }

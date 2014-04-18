@@ -34,53 +34,55 @@ public final class R {
         public static final int welcome_logo=0x7f020008;
     }
     public static final class id {
-        public static final int feed_container=0x7f080000;
-        public static final int feed_datetime=0x7f080002;
-        public static final int feed_title=0x7f080001;
-        public static final int icon_image=0x7f080003;
-        public static final int icon_text=0x7f080004;
-        public static final int login_button_nav=0x7f080009;
-        public static final int login_form_login=0x7f080007;
-        public static final int login_form_password=0x7f080006;
-        public static final int login_form_register=0x7f080008;
-        public static final int login_form_username=0x7f080005;
-        public static final int main_fields_static=0x7f08000a;
-        public static final int main_grid=0x7f08000e;
-        public static final int main_remain_value=0x7f08000d;
-        public static final int main_usage_value=0x7f08000c;
-        public static final int main_username_value=0x7f08000b;
-        public static final int post_author=0x7f080010;
-        public static final int post_content=0x7f080012;
-        public static final int post_date=0x7f080011;
-        public static final int post_title=0x7f08000f;
-        public static final int profile_email=0x7f080015;
-        public static final int profile_location=0x7f080014;
-        public static final int profile_screen_name=0x7f080013;
-        public static final int profile_update=0x7f080016;
-        public static final int query_button=0x7f08001a;
-        public static final int query_date_from=0x7f080018;
-        public static final int query_date_to=0x7f080019;
-        public static final int query_result_table=0x7f08001b;
-        public static final int query_sub_title=0x7f080017;
-        public static final int reg_form_confirm=0x7f080021;
-        public static final int reg_form_password=0x7f08001f;
-        public static final int reg_form_password2=0x7f080020;
-        public static final int reg_form_username=0x7f08001e;
-        public static final int result_item_date=0x7f08001c;
-        public static final int result_item_usage=0x7f08001d;
+        public static final int charge_total=0x7f080000;
+        public static final int feed_container=0x7f080001;
+        public static final int feed_datetime=0x7f080003;
+        public static final int feed_title=0x7f080002;
+        public static final int icon_image=0x7f080004;
+        public static final int icon_text=0x7f080005;
+        public static final int login_button_nav=0x7f08000a;
+        public static final int login_form_login=0x7f080008;
+        public static final int login_form_password=0x7f080007;
+        public static final int login_form_register=0x7f080009;
+        public static final int login_form_username=0x7f080006;
+        public static final int main_fields_static=0x7f08000b;
+        public static final int main_grid=0x7f08000f;
+        public static final int main_remain_value=0x7f08000e;
+        public static final int main_usage_value=0x7f08000d;
+        public static final int main_username_value=0x7f08000c;
+        public static final int post_author=0x7f080011;
+        public static final int post_content=0x7f080013;
+        public static final int post_date=0x7f080012;
+        public static final int post_title=0x7f080010;
+        public static final int profile_email=0x7f080016;
+        public static final int profile_location=0x7f080015;
+        public static final int profile_screen_name=0x7f080014;
+        public static final int profile_update=0x7f080017;
+        public static final int query_button=0x7f08001b;
+        public static final int query_date_from=0x7f080019;
+        public static final int query_date_to=0x7f08001a;
+        public static final int query_result_table=0x7f08001c;
+        public static final int query_sub_title=0x7f080018;
+        public static final int reg_form_confirm=0x7f080022;
+        public static final int reg_form_password=0x7f080020;
+        public static final int reg_form_password2=0x7f080021;
+        public static final int reg_form_username=0x7f08001f;
+        public static final int result_item_date=0x7f08001d;
+        public static final int result_item_usage=0x7f08001e;
     }
     public static final class layout {
-        public static final int feed_activity=0x7f030000;
-        public static final int feed_item=0x7f030001;
-        public static final int grid_item=0x7f030002;
-        public static final int login_activity=0x7f030003;
-        public static final int main_activity=0x7f030004;
-        public static final int on_loading=0x7f030005;
-        public static final int post_activity=0x7f030006;
-        public static final int profile_activity=0x7f030007;
-        public static final int query_activity=0x7f030008;
-        public static final int register_activity=0x7f030009;
-        public static final int result_item=0x7f03000a;
+        public static final int charge_activity=0x7f030000;
+        public static final int feed_activity=0x7f030001;
+        public static final int feed_item=0x7f030002;
+        public static final int grid_item=0x7f030003;
+        public static final int login_activity=0x7f030004;
+        public static final int main_activity=0x7f030005;
+        public static final int on_loading=0x7f030006;
+        public static final int post_activity=0x7f030007;
+        public static final int profile_activity=0x7f030008;
+        public static final int query_activity=0x7f030009;
+        public static final int register_activity=0x7f03000a;
+        public static final int result_item=0x7f03000b;
     }
     public static final class string {
         /**  Global START 
@@ -88,6 +90,12 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int app_version=0x7f060001;
         public static final int btn_update_profile=0x7f060017;
+        /**  Query activity END 
+ Charge activity START 
+         */
+        public static final int charge_activity_title=0x7f060020;
+        public static final int charge_confirm=0x7f060022;
+        public static final int charge_total_hint=0x7f060021;
         /**  Register activity END 
  Feed activity START 
          */
@@ -101,7 +109,7 @@ public final class R {
          */
         public static final int field_username=0x7f060003;
         public static final int field_username_value=0x7f060006;
-        public static final int grid_icon=0x7f060020;
+        public static final int grid_icon=0x7f060023;
         public static final int hint_email=0x7f060016;
         public static final int hint_location=0x7f060015;
         public static final int hint_password=0x7f06000b;
@@ -129,7 +137,7 @@ public final class R {
         public static final int query_do=0x7f06001f;
         public static final int query_result_title=0x7f06001c;
         public static final int query_sub_title=0x7f060019;
-        public static final int register_comfirm=0x7f060010;
+        public static final int register_confirm=0x7f060010;
         public static final int register_text=0x7f06000d;
         /**  Login activity END 
  Register activity START 
@@ -137,7 +145,7 @@ public final class R {
         public static final int register_title=0x7f06000e;
         public static final int table_filed_date=0x7f06001d;
         public static final int table_filed_usage=0x7f06001e;
-        public static final int welcome_logo=0x7f060021;
+        public static final int welcome_logo=0x7f060024;
         public static final int welcome_message=0x7f060002;
     }
     public static final class style {

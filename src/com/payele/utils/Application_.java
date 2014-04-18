@@ -22,6 +22,11 @@ public class Application_ extends Application{
 	public void addActivity(Activity activity) {
 		activities.add(activity);
 	}
+	
+	public boolean detectNetwork () {
+		return HttpRequest.isNetworkCOnnected(getApplicationContext());
+		
+	}
 
 	public void exit() {
 		for (Activity activity:activities) {

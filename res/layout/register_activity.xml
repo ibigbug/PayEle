@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_bg"
             android:layout_marginTop="10dp"
-            android:text="@string/register_text"
+            android:text="@string/register_confirm"
             android:onClick="doRegister" />
 
     </LinearLayout>

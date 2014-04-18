@@ -27,7 +27,7 @@
     <!-- Register activity START -->
     <string name="register_title">欢迎注册</string>
     <string name="hint_username_register">请输入用户名（数字字母或下划线）</string>
-    <string name="register_comfirm">注册</string>
+    <string name="register_confirm">注册</string>
     <string name="hint_password_again">确认密码</string>
     <!-- Register activity END -->
     
@@ -56,5 +56,11 @@
     <string name="table_filed_usage">用量（度）</string>
     <string name="query_do">查询</string>
     <!-- Query activity END -->
+    
+    <!-- Charge activity START -->
+    <string name="charge_activity_title">充值页面</string>
+    <string name="charge_total_hint">请输充值金额</string>
+    <string name="charge_confirm">确认充值</string>
+    <!-- Charge activity END -->
     
 </resources>
