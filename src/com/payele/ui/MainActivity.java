@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			
+			mgr.logoutUser();
 			Application_.getInstatnce().exit();
 	        
 		}
@@ -95,8 +95,8 @@ public class MainActivity extends Activity {
 	    	
 	    	
 	    	usernameView.setText(currentAccount.getScreen_name());
-	    	usageView.setText("1000000");
-	    	remainView.setText("-100000");
+	    	usageView.setText(String.valueOf(currentAccount.getUsage()));
+	    	remainView.setText(String.valueOf((currentAccount.getRemain())));
 	    } else 
 	    	loginBtn.setOnClickListener(toLoginViewListener);
 		

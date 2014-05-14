@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper{
 	
 	private static final String DB_NAME = "app.db";
-	private static final int DB_VERSION = 11;
+	private static final int DB_VERSION = 12;
 
 	public DBHelper(Context context) {
 		super(context, DB_NAME, null, DB_VERSION);
@@ -31,6 +31,8 @@ public class DBHelper extends SQLiteOpenHelper{
 				"session string," +
 				"email string," +
 				"location string," +
+				"remain integer," +
+				"usage integer," +
 				"screen_name string)";
 		db.execSQL(accountTableString);
 	}

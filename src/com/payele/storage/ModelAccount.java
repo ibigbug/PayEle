@@ -14,6 +14,8 @@ public class ModelAccount {
 	private String screen_name;
 	private String location;
 	private String email;
+	private int usage;
+	private int remain;
 	
 	public ModelAccount(){}
 	
@@ -23,6 +25,8 @@ public class ModelAccount {
 	        username = accountJsonObject.getString("username");
 			screen_name = accountJsonObject.getString("screen_name");
 			session = accountJsonObject.getString("session");
+			usage = accountJsonObject.getInt("usage");
+			remain = accountJsonObject.getInt("remain");
         } catch (JSONException e) {
 	        Log.e("Init Model Account", "Wrong accountJsonObject: " + accountJsonObject.toString());
 	        e.printStackTrace();
@@ -124,6 +128,38 @@ public class ModelAccount {
      */
     public void setEmail(String email) {
     	this.email = email;
+    }
+
+	
+    /**
+     * @return the usage
+     */
+    public int getUsage() {
+    	return usage;
+    }
+
+	
+    /**
+     * @param usage the usage to set
+     */
+    public void setUsage(int usage) {
+    	this.usage = usage;
+    }
+
+	
+    /**
+     * @return the remain
+     */
+    public int getRemain() {
+    	return remain;
+    }
+
+	
+    /**
+     * @param remain the remain to set
+     */
+    public void setRemain(int remain) {
+    	this.remain = remain;
     }
 
 	/* (non-Javadoc)

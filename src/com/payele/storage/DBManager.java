@@ -72,9 +72,10 @@ public class DBManager {
 		cv.put("username", account.getUsername());
 		cv.put("screen_name", account.getScreen_name());
 		cv.put("session", account.getSession());
+		cv.put("usage", account.getUsage());
+		cv.put("remain", account.getRemain());
 		
 		db.insert("account", null, cv);
-		Log.d("CREATE_ACCOUNT_DEBUG", account.toString());
 		
 		return account;
 	}
@@ -89,6 +90,8 @@ public class DBManager {
 			cv.put("username", account.getUsername());
 			cv.put("screen_name", account.getScreen_name());
 			cv.put("session", account.getSession());
+			cv.put("usage", account.getUsage());
+			cv.put("remain", account.getRemain());
 			
 			updateAccount(account.getId(), cv);
 			return retriveAccount(existAccount.getId());
@@ -129,6 +132,8 @@ public class DBManager {
 			account.setScreen_name(cursor.getString(cursor.getColumnIndex("screen_name")));
 			account.setLocation(cursor.getString(cursor.getColumnIndex("location")));
 			account.setEmail(cursor.getString(cursor.getColumnIndex("email")));
+			account.setUsage(cursor.getInt(cursor.getColumnIndex("usage")));
+			account.setRemain(cursor.getInt(cursor.getColumnIndex("remain")));
 			
 			return account;
 		} else

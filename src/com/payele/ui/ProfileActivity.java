@@ -130,9 +130,7 @@ public class ProfileActivity extends Activity{
 	            stat = result.getString("stat");
 	            if (stat.equals("ok")) {
 	            	profile = result.getJSONObject("data");
-	            	Log.i("PROFILE——JSON", profile.toString());
 	            	account = mgr.updateAccount(currentUid, profile);
-	            	Log.i("ProfileActivity", account.toString());
 	            	ProfileActivity.this.initView();
 	            	Toast.makeText(ProfileActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
 	            } else {
